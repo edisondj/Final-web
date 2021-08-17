@@ -1,16 +1,17 @@
+<?php include 'php/update.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create</title>
+	<title>Update</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="container">
-		<form action="php/create.php" 
+		<form action="php/update.php" 
 		      method="post">
             
-		   <h4 class="display-4 text-center">Create</h4><hr><br>
+		   <h4 class="display-4 text-center">Update</h4><hr><br>
 		   <?php if (isset($_GET['error'])) { ?>
 		   <div class="alert alert-danger" role="alert">
 			  <?php echo $_GET['error']; ?>
@@ -22,9 +23,7 @@
 		           class="form-control" 
 		           id="marca" 
 		           name="marca" 
-		           value="<?php if(isset($_GET['marca']))
-		                           echo($_GET['marca']); ?>" 
-		           placeholder="digite la marca">
+		           value="<?=$row['marca'] ?>" >
 		   </div>
 
 		   <div class="form-group">
@@ -33,9 +32,7 @@
 		           class="form-control" 
 		           id="modelo" 
 		           name="modelo" 
-		           value="<?php if(isset($_GET['modelo']))
-		                           echo($_GET['modelo']); ?>"
-		           placeholder="digite el modelo">
+		           value="<?=$row['modelo'] ?>" >
 		   </div>
 		   <div class="form-group">
 		     <label for="color">Color</label>
@@ -43,9 +40,7 @@
 		           class="form-control" 
 		           id="color" 
 		           name="color" 
-		           value="<?php if(isset($_GET['color']))
-		                           echo($_GET['color']); ?>"
-		           placeholder="digite el Color">
+		           value="<?=$row['color'] ?>">
 		   </div>
 		   <div class="form-group">
 		     <label for="comentario">Comentario</label>
@@ -53,9 +48,7 @@
 		           class="form-control" 
 		           id="comentario" 
 		           name="comentario" 
-		           value="<?php if(isset($_GET['comentario']))
-		                           echo($_GET['comentario']); ?>"
-		           placeholder="digite el comentario">
+		           value="<?=$row['comentario'] ?>">
 		   </div>
 		   <div class="form-group">
 		     <label for="cantidad_lavadoras">Cantidad de Lavadoras</label>
@@ -63,9 +56,7 @@
 		           class="form-control" 
 		           id="cantidad_lavadoras" 
 		           name="cantidad_lavadoras" 
-		           value="<?php if(isset($_GET['cantidad_lavadoras']))
-		                           echo($_GET['cantidad_lavadoras']); ?>"
-		           placeholder="digite la cantidad de lavadoras">
+		           value="<?=$row['cantidad_lavadoras'] ?>">
 		   </div>
 		   <div class="form-group">
 		     <label for="valor_carga">Valor de la carga</label>
@@ -73,9 +64,7 @@
 		           class="form-control" 
 		           id="valor_carga" 
 		           name="valor_carga" 
-		           value="<?php if(isset($_GET['valor_carga']))
-		                           echo($_GET['valor_carga']); ?>"
-		           placeholder="digite el Valor de la carga">
+		           value="<?=$row['valor_carga'] ?>">
 		   </div>
 		   <div class="form-group">
 		     <label for="peso">Peso de la carga</label>
@@ -83,15 +72,17 @@
 		           class="form-control" 
 		           id="peso" 
 		           name="peso" 
-		           value="<?php if(isset($_GET['peso']))
-		                           echo($_GET['peso']); ?>"
-		           placeholder="digite el peso de la carga">
+		           value="<?=$row['peso'] ?>">
 		   </div>
 
+		   <input type="text" 
+		          name="id"
+		          value="<?=$row['id']?>"
+		          hidden >
 
 		   <button type="submit" 
-		          class="btn btn-primary"
-		          name="create">Create</button>
+		           class="btn btn-primary"
+		           name="update">Update</button>
 		    <a href="read.php" class="link-primary">View</a>
 	    </form>
 	</div>
