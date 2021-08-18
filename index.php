@@ -142,6 +142,9 @@
 		   <button type="submit" 
 		          class="btn btn-primary"
 		          name="create">Agregar</button>
+				  <br>
+				  <br>
+				  <br>
 		    <a href="read.php" class="link-primary">Listado</a>
 	    </form>
 	</div>

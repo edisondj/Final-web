@@ -1,4 +1,5 @@
 <?php include "php/read.php"; ?>
+<?php require "reporte.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,10 +7,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-	<div class="container">
-		<div class="box">
-			<h4 class="display-4 text-center">Listado de camiones</h4><br>
+<body><h4 class="display-4 text-center">Listado de camiones</h4><br>
+	<div class="container ">
+	<div class="link-right">
+				<button class = "btn btn-warning"><a href="index.php" class="link-primary">Agregar</a></button>
+			</div>
+		<div class="box d-flex justify-content-center">
+			
 			<?php if (isset($_GET['success'])) { ?>
 		    <div class="alert alert-success" role="alert">
 			  <?php echo $_GET['success']; ?>
@@ -18,6 +22,7 @@
 			<?php if (mysqli_num_rows($result)) { ?>
 			<table class="table table-striped" >
 			  <thead>
+			  
 			    <tr>
 			      <th scope="col">#</th>
 			      <th scope="col">Marca</th>
@@ -55,6 +60,11 @@
 				  <td><?php echo $rows['valor']; ?></td>
 				  <td><?php echo $rows['peso_lavadora']; ?></td>
 			      </td>
+				  <td><a href="reporte.php"
+			      	     class="btn btn-success">Ver reporte</a>
+
+			      	
+			      </td>
 			      <td><a href="update.php?id=<?=$rows['id']?>" 
 			      	     class="btn btn-success">Update</a>
 
@@ -66,9 +76,7 @@
 			  </tbody>
 			</table>
 			<?php } ?>
-			<div class="link-right">
-				<a href="index.php" class="link-primary">Create</a>
-			</div>
+			
 		</div>
 	</div>
 </body>
