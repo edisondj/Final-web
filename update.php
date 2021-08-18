@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Update</title>
+	<title>Actualizacion de listado</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -11,7 +11,7 @@
 		<form action="php/update.php" 
 		      method="post">
             
-		   <h4 class="display-4 text-center">Update</h4><hr><br>
+		   <h4 class="display-4 text-center">Editar Listado Camiones</h4><hr><br>
 		   <?php if (isset($_GET['error'])) { ?>
 		   <div class="alert alert-danger" role="alert">
 			  <?php echo $_GET['error']; ?>
@@ -73,6 +73,46 @@
 		           id="peso" 
 		           name="peso" 
 		           value="<?=$row['peso'] ?>">
+		   </div>
+		   <div class="form-group">
+		     <label for="lavadora_id">ID de lavadora</label>
+		     <input type="lavadora_id" 
+		           class="form-control" 
+		           id="lavadora_id" 
+		           name="lavadora_id" 
+		           value="<?=$row['lavadora_id'] ?>">
+		   </div>
+		   <div class="form-group">
+		     <label for="nombre">Marca de lavadora</label>
+		     <input type="nombre" 
+		           class="form-control" 
+		           id="nombre" 
+		           name="nombre" 
+		           value="<?=$row['nombre'] ?>">
+		   </div>
+		   <div class="form-group">
+		     <label for="tipo">Modelo de lavadora</label>
+		     <input type="tipo" 
+		           class="form-control" 
+		           id="tipo" 
+		           name="tipo" 
+		           value="<?=$row['tipo'] ?>">
+		   </div>
+		   <div class="form-group">
+		     <label for="valor">valor de lavadora</label>
+		     <input type="valor" 
+		           class="form-control" 
+		           id="valor" 
+		           name="valor" 
+		           value="<?=$row['valor'] ?>">
+		   </div>
+		   <div class="form-group">
+		     <label for="peso_lavadora">Peso de lavadora</label>
+		     <input type="peso_lavadora" 
+		           class="form-control" 
+		           id="peso_lavadora" 
+		           name="peso_lavadora" 
+		           value="<?=$row['peso_lavadora'] ?>">
 		   </div>
 
 		   <input type="text" 

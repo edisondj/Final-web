@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create</title>
+	<title>Gestion de camniones de Venta</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -10,7 +10,7 @@
 		<form action="php/create.php" 
 		      method="post">
             
-		   <h4 class="display-4 text-center">Create</h4><hr><br>
+		   <h4 class="display-4 text-center">Gestion de camniones de Venta<</h4><hr><br>
 		   <?php if (isset($_GET['error'])) { ?>
 		   <div class="alert alert-danger" role="alert">
 			  <?php echo $_GET['error']; ?>
@@ -87,12 +87,62 @@
 		                           echo($_GET['peso']); ?>"
 		           placeholder="digite el peso de la carga">
 		   </div>
+		   <div class="form-group">
+		     <label for="lavadora_id">ID de lavadora</label>
+		     <input type="text" 
+		           class="form-control" 
+		           id="lavadora_id" 
+		           name="lavadora_id" 
+		           value="<?php if(isset($_GET['lavadora_id']))
+		                           echo($_GET['lavadora_id']); ?>"
+		           placeholder="digite el id de la lavadora">
+		   </div>
+		   <div class="form-group">
+		     <label for="nombre">Marca de lavadora</label>
+		     <input type="nombre" 
+		           class="form-control" 
+		           id="nombre" 
+		           name="nombre" 
+		           value="<?php if(isset($_GET['nombre']))
+		                           echo($_GET['nombre']); ?>"
+		           placeholder="digite marca de la lavadora">
+		   </div>
+		   <div class="form-group">
+		     <label for="tipo">modelo de lavadora</label>
+		     <input type="tipo" 
+		           class="form-control" 
+		           id="tipo" 
+		           name="tipo" 
+		           value="<?php if(isset($_GET['tipo']))
+		                           echo($_GET['tipo']); ?>"
+		           placeholder="digite el modelo de lavadora">
+		   </div>
+		   <div class="form-group">
+		     <label for="valor">valor de lavadora</label>
+		     <input type="valor" 
+		           class="form-control" 
+		           id="valor" 
+		           name="valor" 
+		           value="<?php if(isset($_GET['valor']))
+		                           echo($_GET['valor']); ?>"
+		           placeholder="digite el valor de la lavadora">
+		   </div>
+		   <div class="form-group">
+		     <label for="peso_lavadora">Peso de lavadora</label>
+		     <input type="peso_lavadora" 
+		           class="form-control" 
+		           id="peso_lavadora" 
+		           name="peso_lavadora" 
+		           value="<?php if(isset($_GET['peso_lavadora']))
+		                           echo($_GET['peso_lavadora']); ?>"
+		           placeholder="digite el peso de la lavadora">
+		   </div>
 
 
 		   <button type="submit" 
 		          class="btn btn-primary"
-		          name="create">Create</button>
-		    <a href="read.php" class="link-primary">View</a>
+		          name="create">Agregar</button>
+		    <a href="read.php" class="link-primary">Listado</a>
 	    </form>
 	</div>
 </body>
